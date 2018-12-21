@@ -44,6 +44,7 @@
 <a href="https://david-dm.org/michaeldoye/mat-progress-buttons#info=devDependencies"><img src="https://david-dm.org/michaeldoye/mat-progress-buttons/dev-status.svg?branch=master" alt="devDependency Status" class="img-responsive"></a></p>
 <h2 id="demo">Demo</h2>
 <p>View all the directives in action at <a href="https://mat-progress-buttons.firebaseapp.com">https://mat-progress-buttons.firebaseapp.com</a></p>
+<p>StackBlitz demo <a href="https://stackblitz.com/edit/mat-progress-buttons-demo">https://stackblitz.com/edit/mat-progress-buttons-demo</a></p>
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><a href="https://angular.io">Angular</a> (<em>requires</em> Angular 2 or higher, tested with 2.0.0)</li>
@@ -146,7 +147,41 @@ export class SomeComponent {
       this.btnOpts.active = false;
     }, 3350);
   }
-};</code></pre></div><h2 id="license">License</h2>
+};</code></pre></div><a name="run-demo-app-locally"/>
+
+<h2 id="run-demo-app-locally">Run Demo App Locally</h2>
+<ul>
+<li><p><a href="https://github.com/michaeldoye/mat-progress-buttons.git">clone this repo</a> by running</p>
+<div><pre class="line-numbers"><code class="language-bash">$ git clone https://github.com/michaeldoye/mat-progress-buttons.git</code></pre></div></li>
+<li><p>link the <strong>mat-progress-buttons</strong> package</p>
+</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ gulp link</code></pre></div><ul>
+<li><p>navigate to the demo app directory</p>
+<div><pre class="line-numbers"><code class="language-bash">$ cd demo</code></pre></div></li>
+<li><p>install the dependencies</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm i</code></pre></div></li>
+<li><p>run/start/serve the app</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm run start</code></pre></div><p>or</p>
+<div><pre class="line-numbers"><code class="language-bash">$ ng serve --open</code></pre></div></li>
+<li>the app is now hosted by <code>http://localhost:4200/</code></li>
+</ul>
+<a name="development"/>
+
+<h2 id="development">Development</h2>
+<ol>
+<li>clone this <a href="https://github.com/michaeldoye/mat-progress-buttons.git">repo</a></li>
+<li>Install the dependencies by running <code>npm i</code></li>
+<li>build the library <code>npm run build</code> or <code>gulp build</code></li>
+<li>Link the library <code>gulp link</code><ol start="5">
+<li>Navigate to the demo app&#39;s directory</li>
+<li><code>cd demo</code>
+_ <code>npm i</code>
+_ <code>npm start</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="license">License</h2>
 <p>Copyright (c) 2018 Michael Doye. Licensed under the MIT License (MIT)</p>
 
 
