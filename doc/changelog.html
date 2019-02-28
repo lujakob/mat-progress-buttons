@@ -18,10 +18,7 @@
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -33,6 +30,17 @@
                <div class="content getting-started">
                    <div class="content-data">
 
+<p><a name="7.1.1"></a></p>
+<h2 id="7-1-1-2019-02-28-"><a href="https://github.com/michaeldoye/mat-progress-buttons/compare/v7.0.10...v7.1.1">7.1.1</a> (2019-02-28)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>demo:</strong> updated spinner size and added missing method (<a href="https://github.com/michaeldoye/mat-progress-buttons/commit/b5b20bd">b5b20bd</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>lib:</strong> mat fab button (<a href="https://github.com/michaeldoye/mat-progress-buttons/commit/9efcfa7">9efcfa7</a>)</li>
+<li><strong>lib:</strong> mat flat button (<a href="https://github.com/michaeldoye/mat-progress-buttons/commit/4443be4">4443be4</a>)</li>
+</ul>
 <p><a name="7.0.10"></a></p>
 <h2 id="7-0-10-2018-12-21-"><a href="https://github.com/michaeldoye/mat-progress-buttons/compare/v7.0.5...v7.0.10">7.0.10</a> (2018-12-21)</h2>
 <p><a name="7.0.5"></a></p>
@@ -113,7 +121,9 @@
 
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
-       <script src="./js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 

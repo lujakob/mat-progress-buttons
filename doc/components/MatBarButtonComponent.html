@@ -18,10 +18,7 @@
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -50,6 +47,9 @@
         </li>
         <li >
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
         </li>
         <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
@@ -90,7 +90,7 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>bar-button.component.scss</code></td>
+                <td class="col-md-9"><code>./bar-button.component.scss</code></td>
             </tr>
 
 
@@ -99,6 +99,12 @@
                 <td class="col-md-3">templateUrl</td>
                 <td class="col-md-9"><code>./bar-button.component.html</code></td>
             </tr>
+
+
+
+
+
+
 
 
         </tbody>
@@ -139,15 +145,15 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="options"></a>
-                        <code>options</code>
+                        <b>options</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="../interfaces/MatProgressButtonOptions.html" target="_self" >MatProgressButtonOptions</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code><a href="../interfaces/MatProgressButtonOptions.html" target="_self" >MatProgressButtonOptions</a></code>
 
-                            </p>
                     </td>
                 </tr>
                         <tr>
@@ -184,10 +190,11 @@ export class MatBarButtonComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;button mat-button
-  [color]&#x3D;&quot;options.buttonColor&quot; 
+  [color]&#x3D;&quot;options.buttonColor&quot;
   [class.active]&#x3D;&quot;options.active&quot;
   [class.mat-raised-button]&#x3D;&quot;options.raised&quot;
   [class.mat-stroked-button]&#x3D;&quot;options.stroked&quot;
+  [class.mat-flat-button]&#x3D;&quot;options.flat&quot;
   [disabled]&#x3D;&quot;options.active || options.disabled&quot;&gt;
 
   &lt;span&gt;{{ options.text }}&lt;/span&gt;
@@ -195,11 +202,26 @@ export class MatBarButtonComponent {
   &lt;mat-progress-bar
     class&#x3D;&quot;bar&quot;
     *ngIf&#x3D;&quot;options.active &amp;&amp; !options.disabled&quot;
-    [color]&#x3D;&quot;options.barColor&quot; 
+    [color]&#x3D;&quot;options.barColor&quot;
     [mode]&#x3D;&quot;options.mode&quot;
     [value]&#x3D;&quot;options.value&quot;&gt;
   &lt;/mat-progress-bar&gt;
-&lt;/button&gt;</code></pre>
+&lt;/button&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./bar-button.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">button.active {
+  cursor: not-allowed;
+}
+.bar {
+  position:absolute;
+  top: 0px;
+  left: 0px;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -227,7 +249,7 @@ export class MatBarButtonComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><button mat-button  [color]="options.buttonColor"   [class.active]="options.active"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [disabled]="options.active || options.disabled">  <span>{{ options.text }}</span>  <mat-progress-bar    class="bar"    *ngIf="options.active && !options.disabled"    [color]="options.barColor"     [mode]="options.mode"    [value]="options.value">  </mat-progress-bar></button></div>'
+        var COMPONENT_TEMPLATE = '<div><button mat-button  [color]="options.buttonColor"  [class.active]="options.active"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [class.mat-flat-button]="options.flat"  [disabled]="options.active || options.disabled">  <span>{{ options.text }}</span>  <mat-progress-bar    class="bar"    *ngIf="options.active && !options.disabled"    [color]="options.barColor"    [mode]="options.mode"    [value]="options.value">  </mat-progress-bar></button></div>'
     var COMPONENTS = [{'name': 'MatBarButtonComponent', 'selector': 'mat-bar-button'},{'name': 'MatSpinnerButtonComponent', 'selector': 'mat-spinner-button'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MatBarButtonComponent'};
@@ -269,7 +291,9 @@ export class MatBarButtonComponent {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

@@ -18,10 +18,7 @@
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -103,6 +100,8 @@ export class SomeComponent {
     spinnerSize: 19,
     raised: false,
     stroked: true,
+    flat: false,
+    fab: false,
     buttonColor: &#39;accent&#39;,
     spinnerColor: &#39;accent&#39;,
     fullWidth: false,
@@ -135,6 +134,7 @@ export class SomeComponent {
     barColor: &#39;accent&#39;,
     raised: false,
     stroked: true,
+    flat: false,
     mode: &#39;indeterminate&#39;,
     value: 0,
     disabled: false
@@ -147,7 +147,8 @@ export class SomeComponent {
       this.btnOpts.active = false;
     }, 3350);
   }
-};</code></pre></div><a name="run-demo-app-locally"/>
+};</code></pre></div><p><strong>Note</strong>: Bar Button does not suppor the <code>fab</code> style, currently. Hope to have something like <a href="https://codepen.io/DevVersion/pen/vGebGB">this</a> soon.</p>
+<a name="run-demo-app-locally"/>
 
 <h2 id="run-demo-app-locally">Run Demo App Locally</h2>
 <ul>
@@ -223,7 +224,9 @@ _ <code>npm start</code></li>
 
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
-       <script src="./js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 
