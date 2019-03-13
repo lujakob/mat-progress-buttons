@@ -132,8 +132,36 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#btnClick">btnClick</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#click">click</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
         </tbody>
     </table>
@@ -164,8 +192,67 @@
             </tbody>
         </table>
 </section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="btnClick"></a>
+                        <b>btnClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;MouseEvent&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/module/component/spinner-button.component.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="click"></a>
+                        <span class="name">
+                            <b>
+                            click
+                            </b>
+                            <a href="#click"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Arguments : </i><code>'$event' </code>
+                        </td>
+                    </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>click(event: MouseEvent)</code>
+                    </td>
+                </tr>
 
 
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/module/component/spinner-button.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -173,7 +260,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, Output, HostListener, EventEmitter } from &#x27;@angular/core&#x27;;
 import { MatProgressButtonOptions } from &#x27;../mat-progress-buttons.interface&#x27;;
 
 @Component({
@@ -184,6 +271,12 @@ import { MatProgressButtonOptions } from &#x27;../mat-progress-buttons.interface
 })
 export class MatSpinnerButtonComponent {
   @Input() options: MatProgressButtonOptions;
+  @Output() btnClick: EventEmitter&lt;MouseEvent&gt; &#x3D; new EventEmitter&lt;MouseEvent&gt;();
+  @HostListener(&#x27;click&#x27;, [&#x27;$event&#x27;])
+  public onClick(event: MouseEvent) {
+    // tslint:disable-next-line: no-unused-expression
+    return !this.options.disabled &amp;&amp; this.btnClick.emit(event);
+  }
 }
 </code></pre>
     </div>
@@ -203,11 +296,11 @@ export class MatSpinnerButtonComponent {
   &lt;span
     class&#x3D;&quot;button-text&quot;
     *ngIf&#x3D;&quot;!options.fab&quot;
-    [class.active]&#x3D;&quot;options.active&quot;&gt;
+    [class.active]&#x3D;&quot;options.active &amp;&amp; !options.disabled&quot;&gt;
       {{ options.text }}
   &lt;/span&gt;
 
-  &lt;ng-container 
+  &lt;ng-container
     *ngIf&#x3D;&quot;options.fab &amp;&amp; options.icon&quot;&gt;
     &lt;mat-icon&gt;{{ options.icon }}&lt;/mat-icon&gt;
   &lt;/ng-container&gt;
@@ -217,7 +310,7 @@ export class MatSpinnerButtonComponent {
     [color]&#x3D;&quot;options.spinnerColor&quot;
     [mode]&#x3D;&quot;options.mode&quot;
     [value]&#x3D;&quot;options.value&quot;
-    [class.active]&#x3D;&quot;options.active&quot;&gt;
+    [class.active]&#x3D;&quot;options.active &amp;&amp; !options.disabled&quot;&gt;
   &lt;/mat-spinner&gt;
 &lt;/button&gt;
 </code></pre>
@@ -291,7 +384,7 @@ export class MatSpinnerButtonComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><button mat-button  [type]="options.type"  [color]="options.buttonColor"  [class.active]="options.active"  [class.fullWidth]="options.fullWidth"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [class.mat-flat-button]="options.flat"  [class.mat-fab]="options.fab"  [disabled]="options.disabled">  <span    class="button-text"    *ngIf="!options.fab"    [class.active]="options.active">      {{ options.text }}  </span>  <ng-container     *ngIf="options.fab && options.icon">    <mat-icon>{{ options.icon }}</mat-icon>  </ng-container>    <mat-spinner class="spinner"    [diameter]="options.fab ? \'58\' : options.spinnerSize"    [color]="options.spinnerColor"    [mode]="options.mode"    [value]="options.value"    [class.active]="options.active">  </mat-spinner></button></div>'
+        var COMPONENT_TEMPLATE = '<div><button mat-button  [type]="options.type"  [color]="options.buttonColor"  [class.active]="options.active"  [class.fullWidth]="options.fullWidth"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [class.mat-flat-button]="options.flat"  [class.mat-fab]="options.fab"  [disabled]="options.disabled">  <span    class="button-text"    *ngIf="!options.fab"    [class.active]="options.active && !options.disabled">      {{ options.text }}  </span>  <ng-container    *ngIf="options.fab && options.icon">    <mat-icon>{{ options.icon }}</mat-icon>  </ng-container>    <mat-spinner class="spinner"    [diameter]="options.fab ? \'58\' : options.spinnerSize"    [color]="options.spinnerColor"    [mode]="options.mode"    [value]="options.value"    [class.active]="options.active && !options.disabled">  </mat-spinner></button></div>'
     var COMPONENTS = [{'name': 'MatBarButtonComponent', 'selector': 'mat-bar-button'},{'name': 'MatSpinnerButtonComponent', 'selector': 'mat-spinner-button'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MatSpinnerButtonComponent'};
