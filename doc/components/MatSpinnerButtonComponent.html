@@ -274,8 +274,9 @@ export class MatSpinnerButtonComponent {
   @Output() btnClick: EventEmitter&lt;MouseEvent&gt; &#x3D; new EventEmitter&lt;MouseEvent&gt;();
   @HostListener(&#x27;click&#x27;, [&#x27;$event&#x27;])
   public onClick(event: MouseEvent) {
-    // tslint:disable-next-line: no-unused-expression
-    return !this.options.disabled &amp;&amp; this.btnClick.emit(event);
+    if (!this.options.disabled &amp;&amp; !this.options.active) {
+      this.btnClick.emit(event);
+    }
   }
 }
 </code></pre>

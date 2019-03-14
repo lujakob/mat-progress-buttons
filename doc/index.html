@@ -89,7 +89,7 @@ import { MatProgressButtonOptions } from &#39;mat-progress-buttons&#39;;
 
 &#64;Component({
   selector: &#39;app-home&#39;,
-  template: &#39;&lt;mat-spinner-button (click)=&quot;btnClick()&quot; [options]=&quot;btnOpts&quot;&gt;&lt;/mat-spinner-button&gt;&#39;
+  template: &#39;&lt;mat-spinner-button (btnClick)=&quot;btnClick()&quot; [options]=&quot;btnOpts&quot;&gt;&lt;/mat-spinner-button&gt;&#39;
 })
 export class SomeComponent {
 
@@ -122,7 +122,7 @@ import { MatProgressButtonOptions } from &#39;mat-progress-buttons&#39;;
 
 &#64;Component({
   selector: &#39;app-home&#39;,
-  template: &#39;&lt;mat-bar-button (click)=&quot;btnClick()&quot; [options]=&quot;btnOpts&quot;&gt;&lt;/mat-bar-button&gt;&#39;
+  template: &#39;&lt;mat-bar-button (btnClick)=&quot;btnClick()&quot; [options]=&quot;btnOpts&quot;&gt;&lt;/mat-bar-button&gt;&#39;
 })
 export class SomeComponent {
 
