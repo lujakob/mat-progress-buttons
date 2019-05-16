@@ -290,6 +290,7 @@ export class MatBarButtonComponent {
   [class.mat-raised-button]&#x3D;&quot;options.raised&quot;
   [class.mat-stroked-button]&#x3D;&quot;options.stroked&quot;
   [class.mat-flat-button]&#x3D;&quot;options.flat&quot;
+  [class.fullWidth]&#x3D;&quot;options.fullWidth&quot;
   [disabled]&#x3D;&quot;options.active || options.disabled&quot;&gt;
 
   &lt;span&gt;{{ options.text }}&lt;/span&gt;
@@ -314,13 +315,17 @@ export class MatBarButtonComponent {
     &amp;.active {
       cursor: not-allowed;
     }
+    &amp;.fullWidth {
+      width: 100%;
+    }
     .bar {
       position:absolute;
       top: 0px;
       left: 0px;
     }
   }
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -348,7 +353,7 @@ export class MatBarButtonComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><button mat-button  [type]="options.type"  [color]="options.buttonColor"  [class.active]="options.active"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [class.mat-flat-button]="options.flat"  [disabled]="options.active || options.disabled">  <span>{{ options.text }}</span>  <mat-progress-bar    class="bar"    *ngIf="options.active && !options.disabled"    [color]="options.barColor"    [mode]="options.mode"    [value]="options.value">  </mat-progress-bar></button></div>'
+        var COMPONENT_TEMPLATE = '<div><button mat-button  [type]="options.type"  [color]="options.buttonColor"  [class.active]="options.active"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [class.mat-flat-button]="options.flat"  [class.fullWidth]="options.fullWidth"  [disabled]="options.active || options.disabled">  <span>{{ options.text }}</span>  <mat-progress-bar    class="bar"    *ngIf="options.active && !options.disabled"    [color]="options.barColor"    [mode]="options.mode"    [value]="options.value">  </mat-progress-bar></button></div>'
     var COMPONENTS = [{'name': 'MatBarButtonComponent', 'selector': 'mat-bar-button'},{'name': 'MatSpinnerButtonComponent', 'selector': 'mat-spinner-button'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MatBarButtonComponent'};
