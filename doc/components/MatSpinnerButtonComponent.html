@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/module/component/spinner-button.component.ts</code>
+    <code>src/module/component/spinner-button/spinner-button.component.ts</code>
 </p>
 
 
@@ -186,7 +186,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/module/component/spinner-button.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/module/component/spinner-button/spinner-button.component.ts:11</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -210,7 +210,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/module/component/spinner-button.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/module/component/spinner-button/spinner-button.component.ts:12</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -245,7 +245,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/module/component/spinner-button.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/module/component/spinner-button/spinner-button.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -261,7 +261,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, Output, HostListener, EventEmitter } from &#x27;@angular/core&#x27;;
-import { MatProgressButtonOptions } from &#x27;../mat-progress-buttons.interface&#x27;;
+import { MatProgressButtonOptions } from &#x27;../../mat-progress-buttons.interface&#x27;;
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -292,6 +292,7 @@ export class MatSpinnerButtonComponent {
   [class.mat-stroked-button]&#x3D;&quot;options.stroked&quot;
   [class.mat-flat-button]&#x3D;&quot;options.flat&quot;
   [class.mat-fab]&#x3D;&quot;options.fab&quot;
+  [ngClass]&#x3D;&quot;options.customClass&quot;
   [disabled]&#x3D;&quot;options.active || options.disabled&quot;&gt;
 
   &lt;span
@@ -305,7 +306,7 @@ export class MatSpinnerButtonComponent {
     *ngIf&#x3D;&quot;options.fab &amp;&amp; options.icon&quot;&gt;
     &lt;mat-icon&gt;{{ options.icon }}&lt;/mat-icon&gt;
   &lt;/ng-container&gt;
-  
+
   &lt;mat-spinner class&#x3D;&quot;spinner&quot;
     [diameter]&#x3D;&quot;options.fab ? 58 : options.spinnerSize&quot;
     [color]&#x3D;&quot;options.spinnerColor&quot;
@@ -385,7 +386,7 @@ export class MatSpinnerButtonComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><button mat-button  [type]="options.type"  [color]="options.buttonColor"  [class.active]="options.active"  [class.fullWidth]="options.fullWidth"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [class.mat-flat-button]="options.flat"  [class.mat-fab]="options.fab"  [disabled]="options.active || options.disabled">  <span    class="button-text"    *ngIf="!options.fab"    [class.active]="options.active && !options.disabled">      {{ options.text }}  </span>  <ng-container    *ngIf="options.fab && options.icon">    <mat-icon>{{ options.icon }}</mat-icon>  </ng-container>    <mat-spinner class="spinner"    [diameter]="options.fab ? 58 : options.spinnerSize"    [color]="options.spinnerColor"    [mode]="options.mode"    [value]="options.value"    [class.active]="options.active && !options.disabled">  </mat-spinner></button></div>'
+        var COMPONENT_TEMPLATE = '<div><button mat-button  [type]="options.type"  [color]="options.buttonColor"  [class.active]="options.active"  [class.fullWidth]="options.fullWidth"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [class.mat-flat-button]="options.flat"  [class.mat-fab]="options.fab"  [ngClass]="options.customClass"  [disabled]="options.active || options.disabled">  <span    class="button-text"    *ngIf="!options.fab"    [class.active]="options.active && !options.disabled">      {{ options.text }}  </span>  <ng-container    *ngIf="options.fab && options.icon">    <mat-icon>{{ options.icon }}</mat-icon>  </ng-container>  <mat-spinner class="spinner"    [diameter]="options.fab ? 58 : options.spinnerSize"    [color]="options.spinnerColor"    [mode]="options.mode"    [value]="options.value"    [class.active]="options.active && !options.disabled">  </mat-spinner></button></div>'
     var COMPONENTS = [{'name': 'MatBarButtonComponent', 'selector': 'mat-bar-button'},{'name': 'MatSpinnerButtonComponent', 'selector': 'mat-spinner-button'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MatSpinnerButtonComponent'};

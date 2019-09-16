@@ -65,13 +65,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/MatProgressButtonsModule.html" data-type="entity-link">MatProgressButtonsModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-MatProgressButtonsModule-c740963c6a94a55974e4f2fb067db10a"' : 'data-target="#xs-components-links-module-MatProgressButtonsModule-c740963c6a94a55974e4f2fb067db10a"' }>
+                                            'data-target="#components-links-module-MatProgressButtonsModule-998f13deaddbd25df3fe334eb0e78dce"' : 'data-target="#xs-components-links-module-MatProgressButtonsModule-998f13deaddbd25df3fe334eb0e78dce"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-MatProgressButtonsModule-c740963c6a94a55974e4f2fb067db10a"' :
-                                            'id="xs-components-links-module-MatProgressButtonsModule-c740963c6a94a55974e4f2fb067db10a"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-MatProgressButtonsModule-998f13deaddbd25df3fe334eb0e78dce"' :
+                                            'id="xs-components-links-module-MatProgressButtonsModule-998f13deaddbd25df3fe334eb0e78dce"' }>
                                             <li class="link">
                                                 <a href="components/MatBarButtonComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">MatBarButtonComponent</a>
