@@ -295,6 +295,22 @@ export class MatSpinnerButtonComponent {
   [ngClass]&#x3D;&quot;options.customClass&quot;
   [disabled]&#x3D;&quot;options.active || options.disabled&quot;&gt;
 
+  &lt;ng-container
+    *ngIf&#x3D;&quot;options.buttonIcon&quot;&gt;
+    &lt;mat-icon
+      class&#x3D;&quot;mat-button-icon&quot;
+      [class.is-mat-icon]&#x3D;&quot;!options.buttonIcon.fontSet&quot;
+      [class.active]&#x3D;&quot;options.active &amp;&amp; !options.disabled&quot;
+      [ngClass]&#x3D;&quot;options.buttonIcon.customClass&quot;
+      [fontSet]&#x3D;&quot;options.buttonIcon.fontSet&quot;
+      [fontIcon]&#x3D;&quot;options.buttonIcon.fontIcon&quot;
+      [color]&#x3D;&quot;options.buttonIcon.color&quot;
+      [svgIcon]&#x3D;&quot;options.buttonIcon.svgIcon&quot;
+      [inline]&#x3D;&quot;options.buttonIcon.inline&quot;&gt;
+      {{ options.buttonIcon.fontSet ? &#x27;&#x27; : options.buttonIcon.fontIcon }}
+    &lt;/mat-icon&gt;
+  &lt;/ng-container&gt;
+
   &lt;span
     class&#x3D;&quot;button-text&quot;
     *ngIf&#x3D;&quot;!options.fab&quot;
@@ -304,7 +320,14 @@ export class MatSpinnerButtonComponent {
 
   &lt;ng-container
     *ngIf&#x3D;&quot;options.fab &amp;&amp; options.icon&quot;&gt;
-    &lt;mat-icon&gt;{{ options.icon }}&lt;/mat-icon&gt;
+    &lt;mat-icon
+      [fontSet]&#x3D;&quot;options.icon.fontSet&quot;
+      [fontIcon]&#x3D;&quot;options.icon.fontIcon&quot;
+      [color]&#x3D;&quot;options.icon.color&quot;
+      [svgIcon]&#x3D;&quot;options.icon.svgIcon&quot;
+      [inline]&#x3D;&quot;options.icon.inline&quot;&gt;
+        {{ options.icon.fontSet ? &#x27;&#x27; : options.icon.fontIcon }}
+    &lt;/mat-icon&gt;
   &lt;/ng-container&gt;
 
   &lt;mat-spinner class&#x3D;&quot;spinner&quot;
@@ -329,7 +352,7 @@ export class MatSpinnerButtonComponent {
       cursor: not-allowed;
     }
     &amp;/deep/ .mat-button-wrapper {
-      display:flex; 
+      display:flex;
       align-items: center;
       justify-content: center;
     }
@@ -357,8 +380,21 @@ export class MatSpinnerButtonComponent {
         opacity: 0;
       }
     }
+    mat-icon.mat-button-icon {
+      padding-right: 5px;
+      transition: opacity .3s ease-in-out;
+      &amp;.is-mat-icon {
+        font-size: 18px;
+        position: relative;
+        top: 3px;
+      }
+      &amp;.active {
+        opacity: 0;
+      }
+    }
   }
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -386,7 +422,7 @@ export class MatSpinnerButtonComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><button mat-button  [type]="options.type"  [color]="options.buttonColor"  [class.active]="options.active"  [class.fullWidth]="options.fullWidth"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [class.mat-flat-button]="options.flat"  [class.mat-fab]="options.fab"  [ngClass]="options.customClass"  [disabled]="options.active || options.disabled">  <span    class="button-text"    *ngIf="!options.fab"    [class.active]="options.active && !options.disabled">      {{ options.text }}  </span>  <ng-container    *ngIf="options.fab && options.icon">    <mat-icon>{{ options.icon }}</mat-icon>  </ng-container>  <mat-spinner class="spinner"    [diameter]="options.fab ? 58 : options.spinnerSize"    [color]="options.spinnerColor"    [mode]="options.mode"    [value]="options.value"    [class.active]="options.active && !options.disabled">  </mat-spinner></button></div>'
+        var COMPONENT_TEMPLATE = '<div><button mat-button  [type]="options.type"  [color]="options.buttonColor"  [class.active]="options.active"  [class.fullWidth]="options.fullWidth"  [class.mat-raised-button]="options.raised"  [class.mat-stroked-button]="options.stroked"  [class.mat-flat-button]="options.flat"  [class.mat-fab]="options.fab"  [ngClass]="options.customClass"  [disabled]="options.active || options.disabled">  <ng-container    *ngIf="options.buttonIcon">    <mat-icon      class="mat-button-icon"      [class.is-mat-icon]="!options.buttonIcon.fontSet"      [class.active]="options.active && !options.disabled"      [ngClass]="options.buttonIcon.customClass"      [fontSet]="options.buttonIcon.fontSet"      [fontIcon]="options.buttonIcon.fontIcon"      [color]="options.buttonIcon.color"      [svgIcon]="options.buttonIcon.svgIcon"      [inline]="options.buttonIcon.inline">      {{ options.buttonIcon.fontSet ? \'\' : options.buttonIcon.fontIcon }}    </mat-icon>  </ng-container>  <span    class="button-text"    *ngIf="!options.fab"    [class.active]="options.active && !options.disabled">      {{ options.text }}  </span>  <ng-container    *ngIf="options.fab && options.icon">    <mat-icon      [fontSet]="options.icon.fontSet"      [fontIcon]="options.icon.fontIcon"      [color]="options.icon.color"      [svgIcon]="options.icon.svgIcon"      [inline]="options.icon.inline">        {{ options.icon.fontSet ? \'\' : options.icon.fontIcon }}    </mat-icon>  </ng-container>  <mat-spinner class="spinner"    [diameter]="options.fab ? 58 : options.spinnerSize"    [color]="options.spinnerColor"    [mode]="options.mode"    [value]="options.value"    [class.active]="options.active && !options.disabled">  </mat-spinner></button></div>'
     var COMPONENTS = [{'name': 'MatBarButtonComponent', 'selector': 'mat-bar-button'},{'name': 'MatSpinnerButtonComponent', 'selector': 'mat-spinner-button'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MatSpinnerButtonComponent'};

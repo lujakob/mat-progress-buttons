@@ -107,6 +107,13 @@ export class SomeComponent {
     fullWidth: false,
     disabled: false,
     mode: &#39;indeterminate&#39;,
+    customClass: &#39;some-class&#39;,
+    // add an icon to the button
+    buttonIcon: {
+      fontSet: &#39;fa&#39;,
+      fontIcon: &#39;fa-heart&#39;,
+      inline: true
+    }
   };
 
   // Click handler
@@ -116,7 +123,38 @@ export class SomeComponent {
       this.btnOpts.active = false;
     }, 3350);
   }
-};</code></pre></div><h3 id="bar-button">Bar Button</h3>
+};</code></pre></div><h3 id="spinner-button-fab">Spinner button FAB</h3>
+<p>You can use the spinner button with a <code>mat-fab</code> with an icon. Both <code>mat-icon</code> and <code>font awesome</code> are supported.</p>
+<p>To set up fontawesome to work with <code>mat-icon</code> you can see instructions <a href="https://stackoverflow.com/a/46208824/3055401">here</a></p>
+<p>Use the <code>icon</code> property on the <code>options</code> object</p>
+<div><pre class="line-numbers"><code class="language-none">  btnOpts: MatProgressButtonOptions = {
+    active: false,
+    text: &#39;Stroked Button&#39;,
+    spinnerSize: 19,
+    raised: false,
+    stroked: true,
+    flat: false,
+    fab: true, // set fab to true
+    buttonColor: &#39;accent&#39;,
+    spinnerColor: &#39;accent&#39;,
+    fullWidth: false,
+    disabled: false,
+    mode: &#39;indeterminate&#39;,
+    icon: {
+      color: primary,
+      fontSet: &#39;fa&#39;,
+      fontIcon: &#39;fa-save&#39;,
+      inline: true
+    },
+  };</code></pre></div><h4 id="icon-api">Icon API</h4>
+<div><pre class="line-numbers"><code class="language-none">interface MatProgressButtonIcon {
+  color?: ThemePalette; // icon color (primary or accent)
+  fontIcon?: string;    // name of the icon (for fontawsome, use &#39;fa-[icon_name])&#39;
+  fontSet?: string;     // if using fontawesome, use &#39;fa&#39; (omit for material icons)
+  inline?: boolean;     // automatically size the icon
+  svgIcon?: string;     // name of the icon in the SVG icon set.
+}</code></pre></div><p>More info in Angular Material <a href="https://material.angular.io/components/icon/api#MatIcon">Docs</a></p>
+<h3 id="bar-button">Bar Button</h3>
 <div><pre class="line-numbers"><code class="language-js">import { Component } from &#39;&#64;angular/core&#39;;
 import { MatProgressButtonOptions } from &#39;mat-progress-buttons&#39;;
 
@@ -137,7 +175,14 @@ export class SomeComponent {
     flat: false,
     mode: &#39;indeterminate&#39;,
     value: 0,
-    disabled: false
+    disabled: false,
+    customClass: &#39;some-class&#39;,
+    // add an icon to the button
+    buttonIcon: {
+      fontSet: &#39;fa&#39;,
+      fontIcon: &#39;fa-heart&#39;,
+      inline: true
+    }
   };
 
   // Click handler
